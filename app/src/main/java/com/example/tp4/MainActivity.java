@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
             milistapeliculas= mispeliculas.obtenertodas ();
             ListView milist;
             milist=findViewById(R.id.lista1);
+            adaptador miadaptador;
+            miadaptador= new adaptador(milist, this);
+            milist.setAdapter(miadaptador);
+            milist.setOnItemClickListener(escuchador);
 
         }
         catch (Exception error){
@@ -97,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    AdapterView.OnItemClikListener escuchador= new AdapterView.OnItemClickListener(){
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l){
+
+        }
+    };
     public void buscar( View v){
 
         tareaasincronica mitarea= new tareaasincronica ();

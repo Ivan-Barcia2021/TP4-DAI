@@ -34,9 +34,12 @@ public class adaptador extends BaseAdapter {
         LayoutInflater inflador;
         inflador=(LayoutInflater)_micontexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         vistadevolver=inflador.inflate(R.layout.listviewpeliculas, grupo,false);
+        String textoposicionactual;
+        textoposicionactual=getItem (pos);
         return vistadevolver;
         TextView txttitulo;
         txttitulo=(TextView)vistadevolver.findViewById(R.id.mipelicula);
+        txttitulo.setText(textoposicionactual);
     }
 
 }
